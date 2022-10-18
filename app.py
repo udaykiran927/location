@@ -6,11 +6,8 @@ import json
 app=Flask(__name__)
 @app.route("/")
 def home():
-    url="http://ipinfo.io/json"
-    response=urlopen(url)
-    data=json.load(response)
-    alloc=data["loc"]
-    return render_template("index.html",alloc=alloc)
+    
+    return render_template("location.html")
 
 if __name__=='__main__':
     app.run(debug=True)
