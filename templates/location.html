@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <head>
     <style>
         .Input_fields{
             display: grid;
@@ -35,11 +36,17 @@
         }
 
     </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet"  type='text/css' media='screen' href="{{ url_for('static', filename='css/stylingcss.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attendance</title>
+    </head>
 
 <body>
 
   <p>Click to access your location.</p>
-  <button class="btn" onclick="getLocation()">Get coordinates</button>
+  <button class="btn" onclick="getLocation()">Allow locations</button>
   <p id="demo"></p>
 
   <form action="{{ url_for('predict')}}" method="POST">
