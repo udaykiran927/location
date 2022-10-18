@@ -1,29 +1,87 @@
 <!DOCTYPE html>
 <html>
+    <style>
+        .Input_fields{
+            display: grid;
+            grid-template-columns: 10% 20%;
+            margin-bottom: 15px;
+        }
+
+        .Input_fields lable{
+           color: #0808e1;
+           font-size: 18px;
+           font-weight: 500%;
+        }
+
+        .Input_fields input{
+            color: #e10808;
+            border: none;
+            border-bottom: 1px solid #888888;
+        }
+
+        .Input_fields input:focus{
+            outline: none;
+        }
+        .btn{
+            border: none;
+            width: 140px;
+            height: 25px;
+            margin-left: 40px;
+            background-color: rgb(17, 214, 228);
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            font-size: medium;
+        }
+
+    </style>
+
 <body>
 
-<p>Click the button to get your coordinates.</p>
+  <p>Click to access your location.</p>
+  <button class="btn" onclick="getLocation()">Get coordinates</button>
+  <p id="demo"></p>
 
-<button onclick="getLocation()">Try It</button>
+  <form action="{{ url_for('predict')}}" method="POST">
 
-<p id="demo"></p>
+  <div class="Input_fields">
+      <input type="hidden" id="Latitude" name="lat" value="">
+  </div>
+  <div  class="Input_fields">
+      <input type="hidden" id="Longitude" name="lon" value="">
+  </div>
+  <div class="button">
+    <button type="submit">Submit</button>
+  </div>
+  </form>
+  
+  
+  </div>
 
-<script>
-var x = document.getElementById("demo");
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-    
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
+  <script>
+      var x=document.getElementById('demo')
+      function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.watchPosition(showPosition);
+          } else {
+              x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+      }
+      function showPosition(position) {
+            document.getElementById('Latitude').value = position.coords.latitude;
+            document.getElementById('Longitude').value = position.coords.longitude;
+            x.innerHTML ="Location Accesed.";
+        }
+        
+    </script>
+    <div>
+
+    {{ attend }}
+
+    </div>
 
 </body>
+
 </html>
+
