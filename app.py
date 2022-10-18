@@ -11,7 +11,7 @@ def home():
 def predict():
     val=[i for i in request.form.values()]
     print(val)
-    if float(val[0])<=14 and float(val[1]):
+    if((float(val[0])<=14 and float(val[0])>=13) and (float(val[1])<=79 and float(val[1])>=78)):
         atten="Present"
     else:
         atten="Absent"
