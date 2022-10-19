@@ -11,11 +11,13 @@ def home():
 def predict():
     val=[i for i in request.form.values()]
     print(val)
+    Latval=val[0]
+    Lonval=val[1]
     if((float(val[0])<=13.62960313 and float(val[1])>=13.62940313)):
         atten="Present"
     else:
         atten="Absent"
-    return render_template("location.html",val=val,attend="Your attendence marked as: "+atten)
+    return render_template("location.html",Lanval=Lanval,Lonval=Lonval,attend="Your attendence marked as: "+atten)
 
 
 
