@@ -17,7 +17,7 @@ def predict():
         atten="Present"
     else:
         atten="Absent"
-    return render_template("location.html",Lanval=Lanval,Lonval=Lonval,attend="Your attendence marked as: "+atten)
+    return render_template("location.html",Latval=Latval,Lonval=Lonval,attend="Your attendence marked as: "+atten)
 
 
 
