@@ -41,7 +41,7 @@ def download():
     return send_file(path, as_attachment=True)
     df.to_csv(path_folder)
     return render_template("location.html",msg="Coordinates Downloaded")'''
-    resp=make_response(df.to_csv())
+    resp=make_response(df.to_csv(index=False))
     resp.headers["Content-Disposition"]="attachement;filename=attendance_sheet.csv"
     resp.headers["Content-Type"]="text/csv"
     lat.clear()
