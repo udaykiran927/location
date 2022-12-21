@@ -57,13 +57,25 @@
   <div  class="Input_fields">
       <input type="text" id="Longitude" name="lon" value="">
   </div>
+  <div  class="Input_fields">
+    Enter Place
+    <input type="text" id="place" name="place" required>
+  </div>
+
   <div class="button">
     <button type="submit">Submit</button>
   </div>
+
+  <div>
+    <button id="but"><a href="{{ url_for('download')}}">Download</a></button>
+  </div>
+
   </form>
+
 
   {{ Latval }}
   {{ Lonval }}
+  {{ msg }}
   
   
   </div>
