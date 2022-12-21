@@ -34,7 +34,7 @@ def download():
     d={"lattitude":lat,"longitude":lon,"place":place}
     print(d)
     df=pd.DataFrame(d)
-    df.to_csv(r'C:\\Users\\udayk\\Desktop\\user2.csv')
+    df.to_csv(r'C:\\Users\\public\\Desktop\\user2.csv')
     lat.clear()
     lon.clear()
     place.clear()
