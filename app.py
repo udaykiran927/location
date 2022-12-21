@@ -1,6 +1,9 @@
 from flask import Flask,render_template,redirect,request
 import json
 import pandas as pd
+from pathlib import Path
+import os
+
 
 
 app=Flask(__name__)
@@ -34,7 +37,10 @@ def download():
     d={"lattitude":lat,"longitude":lon,"place":place}
     print(d)
     df=pd.DataFrame(d)
-    df.to_csv(r'C:\\Users\\public\\Desktop\\user2.csv')
+    path_folder=str(os.path.join(Path.home(),"Downloads"))
+    path_folder=path_folder+'\\attendance.csv'
+    path_folder
+    df.to_csv(path_folder)
     lat.clear()
     lon.clear()
     place.clear()
