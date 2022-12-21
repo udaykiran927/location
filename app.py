@@ -37,9 +37,8 @@ def download():
     d={"lattitude":lat,"longitude":lon,"place":place}
     print(d)
     df=pd.DataFrame(d)
-    path_folder=str(os.path.join(Path.home(),"Downloads"))
-    path_folder=path_folder+'\\attendance.csv'
-    path_folder
+    path_folder=str(os.path.join(os.path.expanduser('~'),"Downloads"))
+    path_folder=path_folder+'\\attendance_sheet.csv'
     df.to_csv(path_folder)
     lat.clear()
     lon.clear()
